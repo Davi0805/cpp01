@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 18:26:01 by davi              #+#    #+#             */
-/*   Updated: 2025/02/28 18:42:00 by davi             ###   ########.fr       */
+/*   Updated: 2025/03/04 10:46:52 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 HumanB::HumanB(std::string name)
 {
     this->_name = name;
+    this->_weapon = NULL;
 }
 
 HumanB::~HumanB()

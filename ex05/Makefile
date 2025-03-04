@@ -6,7 +6,7 @@
 #    By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/28 17:40:38 by davi              #+#    #+#              #
-#    Updated: 2025/03/01 17:12:24 by dmelo-ca         ###   ########.fr        #
+#    Updated: 2025/03/03 17:21:50 by dmelo-ca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # File names
-SRCS = main.cpp Sed.cpp
+SRCS = main.cpp Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
-TARGET = Sed
+TARGET = Harl
 
 # Default target
 all: $(TARGET)

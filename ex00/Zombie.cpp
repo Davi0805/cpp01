@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: davi <davi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 17:40:53 by davi              #+#    #+#             */
-/*   Updated: 2025/02/28 17:40:54 by davi             ###   ########.fr       */
+/*   Updated: 2025/03/04 09:12:38 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 Zombie::Zombie(std::string name)
 {
     this->_name = name;
+    std::cout << GREEN << "Zombie " << _name << " constructor called!" << RESET << std::endl;
 }
 
 Zombie::Zombie()

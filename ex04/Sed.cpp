@@ -6,7 +6,7 @@
 /*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 17:03:55 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2025/03/01 18:01:55 by dmelo-ca         ###   ########.fr       */
+/*   Updated: 2025/03/04 10:51:05 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,43 @@ int Sed::execute()
         return (0);
     while(std::getline(inputFile, _buffer))
     {
-        std::cout << _buffer << std::endl;        
+        replaceS1();
+        if (!inputFile.eof())
+            _result.append("\n");
+    }
+    std::cout << _result << std::endl;
+    std::string outputFilename(_filename);
+    outputFilename.append(".replace");
+    std::ofstream outputFile(outputFilename.c_str());
+    if(outputFile.is_open())
+    {
+        outputFile << _result;
+        outputFile.close();
+    }
+    else
+    {
+        std::cerr << "Erro ao criar arquivo" << std::endl;
+        return (1);
     }
     return(0);
 }
 
 void Sed::replaceS1()
 {
-    for (int i = 0; i < _buffer.length(); i++)
+    std::size_t it = _buffer.find(_s1);
+
+    while(it != std::string::npos)    
     {
-        // Procura primeiro char
-        if (_buffer[i] == _s1[0])
-        {
-            // Checa se a string esta presente
-            for(int j = 0; j < _s1.length(); j++)
-            {
-            }
-        }
+        // Append string ate fim da primeira aparicao do target para result
+        _result.append(_buffer, 0, it);
+        // Append da string para substituir
+        _result.append(_s2);
+        // apagar do buffer ate onde dei append no result
+        _buffer.erase(0, it + _s1.length());
+        it = _buffer.find(_s1);
     }
+    _result.append(_buffer);
+    return ;
 }
 
 

@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sed.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 17:03:12 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2025/03/01 17:45:38 by dmelo-ca         ###   ########.fr       */
+/*   Created: 2025/03/03 16:16:02 by dmelo-ca          #+#    #+#             */
+/*   Updated: 2025/03/03 17:22:26 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SED_HPP
-#define SED_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <string>
-#include <fstream>
-
-class Sed
+int main(void)
 {
-private:
-    std::string _filename;
-    std::string _s1;
-    std::string _s2;
-    static std::ifstream inputFile;
-    std::string _buffer;
-    std::string _result;
-public:
-    Sed(char **av);
-    ~Sed();
-    int execute();
+    Harl log;
 
-    bool    isFileValid();
-    void    replaceS1();
-};
+    log.complain("DEBUG");
+    
+    std::cout << std::endl;
 
-#endif //SED_HPP
+    log.complain("INFO");
+
+    std::cout << std::endl;
+
+    log.complain("WARNING");
+
+    std::cout << std::endl;
+
+    log.complain("ERROR");
+
+    std::cout << std::endl;
+
+    return (0);
+}

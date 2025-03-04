@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sed.hpp                                            :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmelo-ca <dmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/01 17:03:12 by dmelo-ca          #+#    #+#             */
-/*   Updated: 2025/03/01 17:45:38 by dmelo-ca         ###   ########.fr       */
+/*   Created: 2025/03/03 16:18:08 by dmelo-ca          #+#    #+#             */
+/*   Updated: 2025/03/03 17:16:25 by dmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SED_HPP
-#define SED_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <iostream>
 #include <string>
-#include <fstream>
 
-class Sed
+class Harl
 {
 private:
-    std::string _filename;
-    std::string _s1;
-    std::string _s2;
-    static std::ifstream inputFile;
-    std::string _buffer;
-    std::string _result;
+    // LOG LEVELS
+    void    debug(void);
+    void    info(void);
+    void    warning(void);
+    void    error(void);
 public:
-    Sed(char **av);
-    ~Sed();
-    int execute();
-
-    bool    isFileValid();
-    void    replaceS1();
+    Harl();
+    ~Harl();
+    
+    void    complain(std::string level);
 };
 
-#endif //SED_HPP
+#endif //HARL_HPP
